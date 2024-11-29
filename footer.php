@@ -1,16 +1,13 @@
 <?php 
 
-$cttCol1 = get_field('contenu_colonne_1','options');
-
-$titreCol2 = get_field('titre-colonne-2','options');
-$gites = get_field('liens-gîtes','options');
+$titreCol2  = get_field('titre-colonne-2','options');
+$gites      = get_field('liens-gîtes','options');
 $titreCol22 = get_field('titre-colonne-2-2','options');
-$liensCol2 = get_field('liens-gîtes_copier','options');
+$liensCol2  = get_field('liens-gîtes_copier','options');
 
-$cttCol2 = get_field('contenu_colonne_2','options');
-
-$cttCol3 = get_field('contenu_colonne_3','options');
-
+$cttCol1    = get_field('contenu_colonne_1','options');
+$cttCol2    = get_field('contenu_colonne_2','options');
+$cttCol3    = get_field('contenu_colonne_3','options');
 
 if(!is_front_page()):
     get_template_part( 'templates-parts/section-bannerfullwidth' );
@@ -29,7 +26,6 @@ endif;?>
                 <?php endif;?>
                 
                 <?php if($cttCol1): echo $cttCol1; endif;?>
-
             </div>
 
             <div class="col col-2">
