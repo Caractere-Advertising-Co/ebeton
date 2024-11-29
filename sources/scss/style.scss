@@ -1,0 +1,157 @@
+/* Mixins */
+@import
+'components/colors',
+'components/animate', 
+'components/home',
+'components/megamenu',
+'components/footer',
+'components/about',
+'components/fonts',
+'components/contact',
+'components/references',
+'components/responsive';
+
+/* Start Styling */
+
+*{
+    margin:0;
+    padding:0;
+
+}
+
+
+html,
+body{
+  font-family: 'Montserrat-v',sans-serif!important;
+  margin: 0;
+
+}
+
+.cta{
+  text-decoration: none;
+  color:$primary-color;
+  border: 1px solid;
+  padding: 20px 30px;
+  font-family: 'Montserrat-v',sans-serif!important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: block;
+  font-size: .6em;
+  font-weight: 400;
+  width: 150px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 8;
+
+
+  &::before{
+    content: "";
+    background-color: #002964;
+    color: #fff;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    margin-left:-30px;
+    display: block;
+    margin-top: -20px;
+    height: 52px;
+    width: 210px;
+    transition: transform ease-in 300ms;
+    z-index: -1;
+  }
+
+  &:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+    margin-left:-30px;
+    margin-top: -20px;
+    display: block;
+    visibility: visible;
+  }
+
+  &:hover span::before{
+    color:whitesmoke;
+  }
+
+  span{
+    
+    &::before{
+      content:'→';
+      color:$primary-color;
+      margin-right: 20px;
+    }
+  }
+
+  &:hover{
+    color:#fff;
+    border:1px solid $primary-color;
+    transition: all ease-in 500ms;
+  }
+
+}
+
+.cta-white{
+  border: 1px solid white;
+  color:white;
+
+  &::before{
+    background-color:white;
+    z-index: -1;
+  }
+  
+  span{
+    &::before{
+      color:white;
+    }
+  }
+
+  &:hover{
+    color:$primary-color;
+
+    span::before{
+      color:$primary-color;
+    }
+  }
+}
+
+.divider{
+  width: 3px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: relative;
+  top: 61vh;
+  left: calc(50vw - 3px);
+  height: 20px;
+  z-index: 8;
+}
+
+.divider-top{
+  position: relative;
+  top:-12vh;
+  background-color: $secondary-color;
+}
+
+h2,
+h3{
+  font-size: 2.5rem;
+}
+
+p{
+  font-size: 1rem;
+  line-height: 2em;
+}
+
+.popup-content{
+  .close{
+    position: absolute;
+    right: 5vw;
+    top: 5vh;
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+    color: #666;
+    width: 22px;
+    cursor: pointer;
+    z-index: 10;
+  }
+}
