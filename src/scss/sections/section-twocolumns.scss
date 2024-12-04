@@ -1,0 +1,52 @@
+#column-section-2 {
+  padding: 100px 0;
+  @include liGray-to-white-horizon;
+  
+  .container {
+    .col-g {
+      width: 65%;
+
+      .block-img{
+        width: 100%;
+        height: 600px;
+        margin-top: 150px;
+        background-color: black;
+      }
+    }
+
+    .col-d {
+      padding-left: 5%;
+      width: 30%;
+
+      h2{
+        margin-bottom: 30px;
+      }
+
+      a {
+        color: $primary-color;
+      }
+    }
+  }
+  
+  &.reverse{
+    @include liGray-to-white-horizon-reverse;
+
+    .container{
+      .col-g{
+        padding-left: 5%;
+        width: 30%;
+      }
+
+      .col-d{
+        width: 65%;
+
+        .block-img{
+          width: 100%;
+          height: 600px;
+          margin-top: 150px;
+          background-color: black;
+        }
+      }
+    }
+  }
+}

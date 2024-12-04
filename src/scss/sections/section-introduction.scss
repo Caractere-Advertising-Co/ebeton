@@ -1,0 +1,38 @@
+#section-about-us{
+  padding: 50px 0;
+  
+  .container{
+    display:flex;
+    flex-direction: column;
+
+    .col-g{
+      width:50%;
+
+      h2{
+        color:$secondary-color;
+        font-weight: 400;
+
+        strong{
+          color:$primary-color;
+        }
+      }
+    }
+
+    .col-d{
+      width: 70%;
+      margin: 50px 0 50px auto;
+
+      p{
+        margin-bottom: 20px;
+        color:$primary-color;
+        line-height: 2em;
+        text-align: justify;
+      }
+    }
+  }
+
+  .divider-bottom{
+    top: 7vh;
+    background-color: $secondary-color;
+  }
+}

@@ -1,97 +1,73 @@
-/* Home page */
+const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: false,
+    delay: 5000,
+    speed: 1000,
+    cssMode: true,
 
-const swiperHero = new Swiper(".swiper-hero", {
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+});
+
+const swiper_abu = new Swiper('.swiper-aboutus', {
   loop: true,
-  autoplay: false,
+  autoplay: true,
+  speed: 1000,
   cssMode: true,
-  clickable: true,
 
   pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+      el: '.swiper-pagination-2',
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
 });
 
-const swiperFrontPage = new Swiper(".swiper-resp", {
+const swiper_activite = new Swiper('.swiper-activite', {
   cssMode: true,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
+const swiper_adv = new Swiper('.swiper-avantages', {
   loop: true,
-  slidesPerView: 3,
+  loopAddBlankSlides: false,
+  cssMode:true,
+
   spaceBetween: 30,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-const swiperCard = new Swiper(".swiper-card", {
-  cssMode: true,
-  slidesPerView: 1.2,
-  loop: true,
-  spaceBetween: 50,
-  autoplay: false,
-});
-
-/* Commun */
-
-const swiperExtra = new Swiper(".swiper-extra", {
-  loop: true,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
+  slidesPerView: 4,
   breakpoints: {
     // when window width is >= 320px
     320: {
-      slidesPerView: 1.2,
+      slidesPerView: 1,
       spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 30
     },
     // when window width is >= 640px
     640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
+      slidesPerView: 4,
+      spaceBetween: 30
+    }
   },
-});
-
-/* Page Gites */
-
-const swiperRooms = new Swiper(".swiper-chambres", {
-  slidesPerView: 3,
-  spaceBetween: 50,
-  loop: true,
 
   navigation: {
-    nextEl: ".swiper-chambre-button-next",
-    prevEl: ".swiper-chambre-button-prev",
-  },
-
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 3,
-      spaceBetween: 50,
-    },
-  },
-});
-
-const swiperAcco = new Swiper(".swiper-acco", {
-  slidesPerView: 1,
-  loop: true,
-
-  navigation: {
-    nextEl: ".swiper-acco-button-next",
-    prevEl: ".swiper-acco-button-prev",
+    nextEl: '.swiper-button-next-2',
+    prevEl: '.swiper-button-prev-2',
   },
 });

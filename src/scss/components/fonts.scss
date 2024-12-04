@@ -1,12 +1,13 @@
 @font-face {
-  font-family: "Gilda Display";
-  src: url("../../assets/fonts/GildaDisplay-Regular.ttf");
+  font-family: 'Font Awesome';
+  src: url(../../assets/fonts/fontawesome-webfont.woff);
 }
 
 @font-face {
-  font-family: "Jost";
-  src: url("../../assets/fonts/Jost-VariableFont_wght.ttf");
+  font-family: 'Montserrat-v';
+  src: url(../../assets/fonts/Montserrat-VF.woff2);
 }
+
 
 h1,
 h2,
@@ -14,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Gilda Display", sans-serif;
+  font-family: "Montserrat-v", sans-serif;
   font-style: normal;
 }
 

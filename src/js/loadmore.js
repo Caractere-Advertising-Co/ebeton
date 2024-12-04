@@ -1,58 +1,25 @@
--(
-  // scripts.js (ou tout autre nom que vous avez donné à votre fichier JavaScript)
-  $(document).ready(function () {
-    var offset = 9; // Nombre d'articles déjà affichés
+let currentPage = 1;
 
-    $("#load-more-posts").click(function (e) {
-      e.preventDefault();
+$(document).ready(function() {
+    $('#load-more').on('click', (e) =>{
+        currentPage++; // Do currentPage + 1, because we want to load the next page
 
-      $.ajax({
-        url: ajax_object.ajax_url, // Utilisation de la variable définie par wp_localize_script()
-        type: "POST",
-        data: {
-          action: "load_more_posts",
-          offset: offset,
-        },
-        success: function (response) {
-          $(".grid_articles").append(response);
-          offset += 9; // Mettre à jour le décalage pour charger les prochains articles
-        },
-      });
+        console.log(currentPage);
+        
+        $.ajax({
+            type:'POST',
+            url: '/wp-admin/admin-ajax.php',
+            dataType: 'json',
+            data : {
+                action: 'load_more_ref',
+                paged : currentPage,
+            },
+            success : function(res){
+                if(currentPage >= res.max){
+                    $('#load-more').hide();
+                };
+                $('.grid-chantier').append(res.html);
+            }
+        })
     });
-
-    $("#load-more-refs").click(function (e) {
-      e.preventDefault();
-
-      $.ajax({
-        url: ajax_object.ajax_url, // Utilisation de la variable définie par wp_localize_script()
-        type: "POST",
-        data: {
-          action: "load_more_refs",
-          offset: offset,
-        },
-        success: function (response) {
-          console.warn(response);
-          $(".grid-references").append(response);
-          offset += 9; // Mettre à jour le décalage pour charger les prochains articles
-        },
-      });
-    });
-  })
-);
-
-$(document).ready(function () {
-  $(".galerie-grid a").slice(0, 9).show();
-
-  var items = $(".galerie-grid a").length;
-  var shown = 9;
-
-  $(".more").click(function () {
-    shown = $(".galerie-grid a:visible").length + 9;
-    if (shown < items) {
-      $(".galerie-grid a").slice(0, parseInt(shown)).show(300);
-    } else {
-      $(".galerie-grid a").slice(0, parseInt(shown)).show(300);
-      $(".more").hide();
-    }
-  });
 });

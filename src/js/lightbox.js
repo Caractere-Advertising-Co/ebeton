@@ -1,50 +1,61 @@
-$(document).ready(function () {
-  $(".views-rooms").on("click", show_ref_popup);
+$(document).ready(function() {
+    $('.type-chantiers').on('click', show_ref_popup);
+    $('.see-details-fp').on('click', show_ref_popup);
 
-  function show_ref_popup(e) {
-    e.preventDefault();
-    var ref = $(this).data("index");
+    function show_ref_popup(e) {
+        e.preventDefault();
+        var ref = $(this).data('index');
 
-    console.log(ref);
+        $('#popup_reference').css('display','flex');
 
-    $("#modal-chambre").css("display", "flex");
-
-    console.log($("#modal-chambre"));
-    $.ajax({
-      type: "POST",
-      url: "/wp-admin/admin-ajax.php",
-      dataType: "json",
-      data: {
-        action: "content_popup",
-        id: ref,
-      },
-      success: function (res) {
-        if (res.template_content && res.template_content.trim() !== "") {
-          $(".container_popup").empty().append(res.template_content);
-
-          // Initialisation du Swiper une fois que le contenu est ajouté
-          const swiper_ref = new Swiper(".swiper-reference", {
-            cssMode: true,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
+        $.ajax({
+            type: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            dataType: 'json',
+            data: {
+                action: 'content_popup',
+                id: ref,
             },
-          });
-        } else {
-          console.log("La réponse est vide ou nulle.");
-        }
-      },
-    });
-  }
+            success: function(res) {
+                if (res.template_content && res.template_content.trim() !== '') {
+                    $('.container_popup').empty().append(res.template_content);
 
-  $(document).on("click", function (event) {
-    if ($(event.target).hasClass("close")) {
-      closePopup();
+                    const swiper_thumbs = new Swiper('.swiper-thumbs', {
+                        spaceBetween: 10,
+                        slidesPerView: 4,
+                        freeMode: true,
+                        watchSlidesProgress: true,
+                    });
+
+                    // Initialisation du Swiper une fois que le contenu est ajouté
+                    const swiper_ref = new Swiper('.swiper-reference', {
+                        cssMode: true,
+                        autoplay:true,
+                        loop:true,
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                        // thumbs: {
+                        //     swiper: swiper_thumbs,
+                        // },
+                    });
+                } else {
+                    console.log('La réponse est vide ou nulle.');
+                }
+            }
+        });
     }
-  });
 
-  function closePopup() {
-    $(".container_popup").empty();
-    $("#modal-chambre").hide();
-  }
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.container_popup, .type-chantiers, .see-details-fp').length || $(event.target).hasClass('close')) {
+            closePopup();
+        }
+    });
+    
+    function closePopup() {
+        $('.container_popup').empty();
+        $('#popup_reference').hide();
+    }    
+
 });

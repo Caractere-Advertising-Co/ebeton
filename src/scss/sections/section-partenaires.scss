@@ -1,0 +1,51 @@
+#partenaires{
+    background:none!important;
+    padding: 0;
+    height: auto;
+
+    .container{
+        border-top:1px solid $light-gray;
+        padding: 10vh 0;
+
+        .intro{
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            
+            h2{
+                font-size: 2.5rem;
+                color: $middle-gray;
+            }
+        }
+
+        .subtitle{
+            color:$secondary-color;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 30px;
+            font-weight: 600;
+        }
+
+        .gallery{
+            border: none;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+
+            .block-img{
+                height: 100px;
+
+                img{
+                    object-fit: contain;
+                    filter: saturate(0);
+                }
+
+                &:hover{
+                    img{
+                        filter: saturate(1);
+                    }
+                }
+            }
+        }
+    }
+  }

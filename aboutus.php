@@ -3,12 +3,12 @@
 
 get_header();
 
-// Récupérations champs ACF
-$title = get_field('titre');
-$intro = get_field('introduction');
-$btn_intro = get_field('bouton');
+    // Récupérations champs ACF
+    $title = get_field('titre');
+    $intro = get_field('introduction');
+    $btn_intro = get_field('bouton');
 
-$galerie = get_field('galerie');
+    $galerie = get_field('galerie');
 
     //services
     $subtitle = get_field('sous-titre');
@@ -21,11 +21,11 @@ $galerie = get_field('galerie');
     $titreAdv = get_field('titre_section');
     $cartesAdv = 'carte_avantages'; // répéteur
     $btnAdv = get_field('btn_avantages');
+    $bgAdv    = get_field('background-advantages');
 
     //contact 
     $subTitleCtt = get_field('subtitle-contact');
     $titleCtt = get_field('titre-contact');
-    $contentCtt = get_field('content-contact');
     $formCtt = get_field('formulaire_de_contact');
 ?>
 
@@ -40,6 +40,37 @@ $galerie = get_field('galerie');
 
         <div class="col_intro from-left">
             <?php echo $intro;?>
+            <a href="<?php echo $btn_intro['url'];?>" class="cta-border from-bottom"><span><?php echo $btn_intro['title'];?></span></a>
+        </div>
+    </div>
+</section>
+
+
+<section id="services">
+    <div class="container">
+        <div class="swiper swiper-aboutus from-bottom">
+            <div class="swiper-wrapper" style="overflow:hidden;">
+                <?php 
+                    foreach($galerie as $img):?>
+                        <div class="swiper-slide" <?php echo !empty($bgSlide) ? ' style="background:url(\''.$bgSlide['url'].'\') no-repeat;background-size:cover;"' : '';?>>
+                            <img src="<?php echo $img['url'];?>" alt="<?php echo $img['title'];?>"/>
+                        </div>
+                    <?php endforeach;
+                ?>
+            </div>
+        </div>
+
+        <div class="title_content">
+            <div>
+                <h3 class="from-left"><?php echo $subtitle;?></h3>
+                <span class="from-left"><?php echo $title_service;?></span>
+            </div>
+        </div>
+
+        <div id="col_services">
+            <div id="exp_service" class="from-bottom">
+                <?php echo $exp_service;?>
+            </div>
 
             <div id="tabl_services">
                 <?php 
@@ -60,56 +91,16 @@ $galerie = get_field('galerie');
                     endif;
                 ?>
             </div>
-
-            <a href="<?php echo $btn_intro['url'];?>" class="cta cta-white from-bottom"><span><?php echo $btn_intro['title'];?></span></a>
-        </div>
-    </div>
-</section>
-
-
-<section id="services">
-    <div class="container">
-        <div class="swiper swiper-aboutus from-bottom">
-            <div class="swiper-wrapper" style="overflow:hidden;">
-                <?php 
-                    foreach($galerie as $img):?>
-                        <div class="swiper-slide" <?php echo !empty($bgSlide) ? ' style="background:url(\''.$bgSlide['url'].'\') no-repeat;background-size:cover;"' : '';?>>
-                            <img src="<?php echo $img['url'];?>" alt="<?php echo $img['title'];?>"/>
-                        </div>
-                    <?php endforeach;
-                ?>
-            </div>
-
-            <div class="swiper-button-prev desktop"></div>
-            <div class="swiper-button-next desktop"></div>
-
-            <div class="swiper-pagination-2 mobile"></div>
-        </div>
-
-        <div class="title_content">
-            <div>
-                <h3 class="from-left"><?php echo $subtitle;?></h3>
-                <span class="from-left"><?php echo $title_service;?></span>
-            </div>
-        </div>
-
-        
-        <div id="col_services">
-            <div id="exp_service" class="from-bottom">
-                <?php echo $exp_service;?>
-            </div>
         
             
             <?php if($btn_service) : ?>
                 <a class="cta from-bottom" href="<?php echo $btn_service['url'];?>"><span><?php echo $btn_service['title'];?></span></a>
             <?php endif;?>
         </div>
-
-        
     </div>
 </section>
 
-<section id="advantages" class="from-bottom">
+<section id="advantages" class="from-bottom" <?php if($bgAdv): echo 'style="background-image: url('.$bgAdv.');"'; endif;?>>
     <div class="container">
         <span class="from-bottom"><?php echo $titreAdv;?></span>
 
@@ -121,7 +112,9 @@ $galerie = get_field('galerie');
                         <div class="swiper-slide">
                             <div class="content">
                                 <div class="adv_title">
-                                    <img src="<?php echo $icone['url'];?>" alt="<?php echo $icone['title'];?>"/>
+                                    <div class="block-img">
+                                        <img src="<?php echo $icone['url'];?>" alt="<?php echo $icone['title'];?>"/>
+                                    </div>
                                     <h4><?php echo get_sub_field('nom_avantages');?></h4>
                                 </div>
                                 <div class="adv_descr">
@@ -137,9 +130,13 @@ $galerie = get_field('galerie');
             <div class="swiper-button-next swiper-button-next-2"></div>
         </div>
 
-        <a class="cta cta-white" href="<?php echo $btnAdv['url'];?>"><span><?php echo $btnAdv['title'];?></span></a>
+        <a class="cta-border" href="<?php echo $btnAdv['url'];?>"><span><?php echo $btnAdv['title'];?></span></a>
     </div>
 </section>
+
+<?php get_template_part( 'templates-parts/section-two-columns-reverse' );?>
+<?php get_template_part( 'templates-parts/section-references', 'full', array('class' => 'about-us') );?>
+
 <section id="contact">
     <div class="container from-bottom">
                 
@@ -148,14 +145,12 @@ $galerie = get_field('galerie');
         <?php echo $titleCtt;?>
 
         <span class="separator-contact"></span>
-
-        <?php echo $contentCtt;?>
     </div>
 
     <?php echo do_shortcode( $formCtt , true );?>
 </section>
 
-<?php get_template_part( 'template-parts/partenariats' );?>
+<?php get_template_part( 'templates-parts/partenariats' );?>
 
 
 
