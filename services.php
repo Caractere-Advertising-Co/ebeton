@@ -34,7 +34,7 @@ get_header();
             <?php echo $intro;?>
 
             <div id="col_services">
-                <div id="exp_service" class="from-bottom"><?php echo $exp_service;?>é</div>
+                <div id="exp_service" class="from-bottom"><?php echo $exp_service;?></div>
 
                 <div id="tabl_services">
                     <?php 

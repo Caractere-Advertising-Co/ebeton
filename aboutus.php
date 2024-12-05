@@ -29,7 +29,6 @@ get_header();
     $formCtt = get_field('formulaire_de_contact');
 ?>
 
-
 <section id="about-lef">
     <div class="container">
         <div class="title_content">
@@ -45,18 +44,15 @@ get_header();
     </div>
 </section>
 
-
 <section id="services">
     <div class="container">
         <div class="swiper swiper-aboutus from-bottom">
             <div class="swiper-wrapper" style="overflow:hidden;">
-                <?php 
-                    foreach($galerie as $img):?>
-                        <div class="swiper-slide" <?php echo !empty($bgSlide) ? ' style="background:url(\''.$bgSlide['url'].'\') no-repeat;background-size:cover;"' : '';?>>
-                            <img src="<?php echo $img['url'];?>" alt="<?php echo $img['title'];?>"/>
-                        </div>
-                    <?php endforeach;
-                ?>
+                <?php foreach($galerie as $img):?>
+                    <div class="swiper-slide" <?php echo !empty($bgSlide) ? ' style="background:url(\''.$bgSlide['url'].'\') no-repeat;background-size:cover;"' : '';?>>
+                        <img src="<?php echo $img['url'];?>" alt="<?php echo $img['title'];?>"/>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
 
@@ -73,25 +69,23 @@ get_header();
             </div>
 
             <div id="tabl_services">
-                <?php 
-                    if(have_rows('services')):
-                        while(have_rows('services')): the_row(); ?>
-                        <?php
-                            $carspec = array('é','è','à','ç');
-                            $ref =  substr(strtolower(get_sub_field('nom_service')),0,5);
-                            $id = str_replace($carspec,'e',$ref).'_id';
+                <?php if(have_rows('services')):
+                    while(have_rows('services')): the_row();
+                
+                        $carspec = array('é','è','à','ç');
+                        $ref =  substr(strtolower(get_sub_field('nom_service')),0,5);
+                        $id = str_replace($carspec,'e',$ref).'_id';
                         ?>
-                            <div id="<?php echo $id;?>" class="from-bottom" >
-                                <button class="accordion"><?php echo get_sub_field('nom_service');?></button>
-                                <div class="content_toggle">
-                                    <?php echo get_sub_field('explications-service');?>
-                                </div>
+                        
+                        <div id="<?php echo $id;?>" class="from-bottom" >
+                            <button class="accordion"><?php echo get_sub_field('nom_service');?></button>
+                            <div class="content_toggle">
+                                <?php echo get_sub_field('explications-service');?>
                             </div>
-                        <?php endwhile;
-                    endif;
-                ?>
-            </div>
-        
+                        </div>
+                    <?php endwhile;
+                endif;?>
+            </div>  
             
             <?php if($btn_service) : ?>
                 <a class="cta from-bottom" href="<?php echo $btn_service['url'];?>"><span><?php echo $btn_service['title'];?></span></a>
