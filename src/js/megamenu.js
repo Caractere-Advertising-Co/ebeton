@@ -45,7 +45,6 @@ $(document).ready(function () {
     const mainMenuContainer = $('.menu-principal-container');
 
     mainMenuContainer.on('mouseleave', closeSubMenu);
-
     mainMenuContainer.on('click', function (e) {
         e.stopPropagation();
         closeSubMenu();

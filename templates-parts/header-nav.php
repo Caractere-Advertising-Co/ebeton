@@ -1,18 +1,26 @@
 <?php 
-            $base_url = get_template_directory_uri();
-            $logo = get_field('logo','options');
-            $logo_white = get_field('logo-white','options');
-            $style = get_field('header__dark_theme');
-        ?>
+    $base_url = get_template_directory_uri();
+    $logo = get_field('logo','options');
+    $logo_white = get_field('logo-white','options');
+    $style = get_field('header__dark_theme');
+?>
 
 <div class="header navigation">
     <div class="col-g">
-        <a href="<?php echo home_url();?>">
-            <?php 
-            if($logo):?>
-                <img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" class="logo" />
-            <?php endif;?>
-        </a>
+        <?php if(is_front_page()):?>
+            <a href="<?php echo home_url();?>">
+                <?php if($logo_white):?>
+                    <img src="<?php echo $logo_white['url'];?>" alt="<?php echo $logo_white['title'];?>" class="logo" />
+                <?php endif;?>
+            </a>
+        <?php else :?>
+
+            <a href="<?php echo home_url();?>">
+                <?php if($logo):?>
+                    <img src="<?php echo $logo['url'];?>" alt="<?php echo $logo['title'];?>" class="logo" />
+                <?php endif;?>
+            </a>
+        <?php endif;?>
     </div>
     
     <div class="col-d">
