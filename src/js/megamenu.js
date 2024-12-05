@@ -8,6 +8,8 @@ $(document).ready(function () {
     // Utilisation correcte de jQuery pour gérer les événements
     openMenu.on('click', function () {
         megaMenu.toggleClass('is_open');
+        openMenu.toggleClass('active');
+
 
         if (header.length) {
             header.toggleClass('is_fixed dark-theme');
@@ -28,6 +30,7 @@ $(document).ready(function () {
             const subMenu = $(this).find('.sub-menu');
             if ($(this).is(':hover')) {
                 subMenu.addClass('active');
+                
             } else {
                 subMenu.removeClass('active');
             }

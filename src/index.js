@@ -1,4 +1,5 @@
 import "./js/accordion.js";
+import "./js/megamenu.js";
 import "./js/swiper.js";
 import "./js/filter.js";
 import "./js/animate.js";

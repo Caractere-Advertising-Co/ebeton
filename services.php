@@ -27,18 +27,14 @@ get_header();
 <section id="about-lef">
     <div class="container">
         <div class="title_content">
-            <div class="from-right">
-                <?php echo $title;?>
-            </div>
+            <div class="from-right"><?php echo $title;?></div>
         </div>
 
         <div class="col_intro from-left">
             <?php echo $intro;?>
 
             <div id="col_services">
-                <div id="exp_service" class="from-bottom">
-                    <?php echo $exp_service;?>
-                </div>
+                <div id="exp_service" class="from-bottom"><?php echo $exp_service;?>é</div>
 
                 <div id="tabl_services">
                     <?php 

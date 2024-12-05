@@ -12,7 +12,7 @@ get_header();?>
         
         ?>
         <div class="title_content">
-            <div><?php echo $title;?></div>
+            <?php echo $title;?>
         </div>
 
         <div class="col_intro">
