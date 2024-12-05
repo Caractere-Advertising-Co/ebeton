@@ -221,6 +221,7 @@
     .swiper-avantages{
       margin-top: 80px;
       width: 80vw;
+      max-width: 1400px;
       overflow: visible;
       display: grid;
       gap: 30px;
@@ -310,8 +311,7 @@
           &::-webkit-scrollbar{
             display: none;
           }
-        }
-
+      }
     }
 
     .cta-border{

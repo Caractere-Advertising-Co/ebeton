@@ -1,5 +1,5 @@
 {
-  "name": "entreprise-francois",
+  "name": "e-beton",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "Benoit Londero - Caractere Advertising",
+  "author": "Caractere Advertising",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.8.1",
