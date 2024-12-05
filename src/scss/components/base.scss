@@ -129,7 +129,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: $light;
   cursor: pointer;
 
   &::before,
@@ -227,7 +227,7 @@ a {
   }
 
   &:hover {
-    color: #fff;
+    color: $light;
 
     &::before {
       transform-origin: left;
@@ -363,8 +363,8 @@ a {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: $primary-color;
-  color: #fff;
+  background-color: $secondary-color;
+  color: $light;
   height: 50px;
   width: 50px;
   padding: 0;
@@ -590,7 +590,7 @@ form {
 
 .divider{
 width: 3px;
-background-color: #ffffff;
+background-color: $lightfff;
 border-radius: 5px;
 position: relative;
 top: 61vh;
@@ -621,7 +621,7 @@ line-height: 2em;
     right: 5vw;
     top: 5vh;
     text-align: center;
-    background: #fff;
+    background: $light;
     padding: 5px;
     color: #666;
     width: 22px;
