@@ -158,8 +158,8 @@ function content_popup(){
           <div class="popup-content">
             <div class="col_details">
               <h2><?php echo $post_data['title']; ?></h2>
-              <p>Date du chantier : <?php echo $post_data['date']; ?></p>
-              <p>Lieu : <?php echo $post_data['lieu']; ?></p>
+              <p><strong>Date du chantier : </strong><?php echo $post_data['date']; ?></p>
+              <p><strong>Lieu : </strong><?php echo $post_data['lieu']; ?></p>
               <?php echo $post_data['content']; ?>
             </div>
             
