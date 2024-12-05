@@ -53,10 +53,6 @@ $infos           = get_field('information_de_contact','options');
             <?php endif;?>
         </div>
     </div>
-    
-    <div class="back-to-top" id="scrollToTopBtn">
-        <?php $stturl = get_field('scrolltop','options');?>
-        <img src="<?php echo $stturl['url'];?>" alt="scroll-to-top" width="50"></div>
 </footer>
 
 <?php wp_footer(); ?>
