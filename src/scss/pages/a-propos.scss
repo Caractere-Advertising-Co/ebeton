@@ -248,7 +248,7 @@
           align-items: flex-start;
           flex-direction: column;
                 
-          .adv_title{
+          .title{
             color: $secondary-color;
             transform: translateY(0);
             transition: all ease-in 350ms;
@@ -259,7 +259,7 @@
               font-weight: 400;
               text-align: center;
               color: $light;
-              font-size: 1rem;
+              font-size: 1.2rem;
             }
 
             .block-img{

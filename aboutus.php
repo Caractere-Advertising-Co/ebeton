@@ -105,7 +105,7 @@ get_header();
 
                     <div class="card-adv">
                         <div class="content">
-                            <div class="adv_title">
+                            <div class="title">
                                 <div class="block-img">
                                     <img src="<?php echo $icone['url'];?>" alt="<?php echo $icone['title'];?>"/>
                                 </div>
