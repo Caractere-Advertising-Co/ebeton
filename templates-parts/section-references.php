@@ -31,7 +31,7 @@ $imageRight = get_field('image_2_ref','options');
     </div>
     <div class="container">
         <?php if($cta):?>
-            <a href="<?php $cta['url'];?>" class="cta-border"><?php echo $cta['title'];?></a>
+            <a href="<?php echo $cta['url'];?>" class="cta-border"><?php echo $cta['title'];?></a>
         <?php endif;?>
     </div>
 </section>
