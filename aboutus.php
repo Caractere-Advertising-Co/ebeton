@@ -98,30 +98,27 @@ get_header();
     <div class="container">
         <span class="from-bottom"><?php echo $titreAdv;?></span>
 
-        <div class="swiper swiper-avantages from-bottom">
-            <div class="swiper-wrapper">
-                <?php if(have_rows('carte_avantages')) : 
-                    while(have_rows('carte_avantages')) : the_row();?>
-                        <?php $icone = get_sub_field('icone');?>
-                        <div class="swiper-slide">
-                            <div class="content">
-                                <div class="adv_title">
-                                    <div class="block-img">
-                                        <img src="<?php echo $icone['url'];?>" alt="<?php echo $icone['title'];?>"/>
-                                    </div>
-                                    <h4><?php echo get_sub_field('nom_avantages');?></h4>
+        <div class="swiper-avantages from-bottom">
+            <?php if(have_rows('carte_avantages')) : 
+                while(have_rows('carte_avantages')) : the_row();
+                    $icone = get_sub_field('icone');?>
+
+                    <div class="swiper-slide">
+                        <div class="content">
+                            <div class="adv_title">
+                                <div class="block-img">
+                                    <img src="<?php echo $icone['url'];?>" alt="<?php echo $icone['title'];?>"/>
                                 </div>
-                                <div class="adv_descr">
-                                    <?php echo get_sub_field('description_avantage');?>
-                                </div>
+                                <h4><?php echo get_sub_field('nom_avantages');?></h4>
+                            </div>
+
+                            <div class="adv_descr">
+                                <?php echo get_sub_field('description_avantage');?>
                             </div>
                         </div>
-                    <?php endwhile;
-                endif;?>            
-            </div>
-
-            <div class="swiper-button-prev swiper-button-prev-2"></div>
-            <div class="swiper-button-next swiper-button-next-2"></div>
+                    </div>
+                <?php endwhile;
+            endif;?>     
         </div>
 
         <a class="cta-border" href="<?php echo $btnAdv['url'];?>"><span><?php echo $btnAdv['title'];?></span></a>

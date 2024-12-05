@@ -220,74 +220,77 @@
 
     .swiper-avantages{
       margin-top: 80px;
-      width: 70vw;
+      width: 80vw;
       overflow: visible;
+      display: grid;
+      gap: 30px;
+      justify-content: space-between;
+      grid-template-columns: repeat(4, 1fr);
         
-      .swiper-wrapper{
-        margin:auto;
-        min-height: 300px;
+
+      .swiper-slide{
+        min-height: 250px;
+        max-height: 250px;
+        width: 100%;
+        box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.2);
+        background-color: $primary-color;
+
+        border-bottom: 2px solid $primary-color;
         overflow: hidden;
+        transition: all ease-in-out 300ms;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
 
-        .swiper-slide{
-          min-height: 250px;
-          max-height: 250px;
-          box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.2);
-          background-color: $primary-color;
-
-          border-bottom: 2px solid $primary-color;
-          overflow: hidden;
-          transition: all ease-in-out 300ms;
-          overflow-y: scroll;
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-
-          .content{
-            padding: 15% 10%;
-            width: 80%;
-            display: flex;               
-            align-items: flex-start;
-            flex-direction: column;
+        .content{
+          padding: 15% 10%;
+          width: 80%;
+          display: flex;               
+          align-items: flex-start;
+          flex-direction: column;
                 
-            .adv_title{
-              color:$secondary-color;
-              transform: translateY(0);
-              transition: all ease-in 350ms;
-              opacity: 1;
-              text-align: left;
+          .adv_title{
+            color:$secondary-color;
+            transform: translateY(0);
+            transition: all ease-in 350ms;
+            opacity: 1;
+            text-align: center;
 
-              .block-img{
-                height: 50px;
-                margin-bottom: 20px;
+            h4{
+              font-weight: 400;
+              text-align: center;
+              color:$light;
+              font-size: 1rem;
+            }
+
+            .block-img{
+              height: 50px;
+              margin-bottom: 20px;
                   
-                img{
-                  object-fit: contain;
-                }
-              }
-    
-              h4{
-                font-weight: 400;
-                text-align: left;
-                color:$light;
-                font-size: 1.1em;
+              img{
+                object-fit: contain;
               }
             }
     
-            .adv_descr{
-              opacity: 0;
-              transform: translateY(100px);
-              transition: all ease-in 400ms;
-              font-size: .8em;
-              text-align: justify;
-              position: absolute;
-              top:5%;
-              left:5%;
-              width: 90%;
+            
+          }
+    
+          .adv_descr{
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all ease-in 400ms;
+            font-size: 1rem;
+            position: absolute;
+            top:5%;
+            left:5%;
+            width: 90%;
 
-              p{
-                font-size: .9em;
-              }
+            p{
+              font-size: .85rem;
+              text-align: left;
             }
           }
+        }
 
           &:hover{
             background-color: $primary-color-hover;
@@ -308,30 +311,7 @@
             display: none;
           }
         }
-      }
 
-      .swiper-button-next-2{
-        right: -60px;
-      }
-
-      .swiper-button-prev-2{
-        left: -60px;
-      }
-
-      .swiper-button-prev-2,
-      .swiper-button-next-2{
-        border: 1px solid #eee;
-        border-radius: 25px;
-        height: 50px;
-        width: 50px;
-        padding: 0;
-        top: calc(50% - 25px);
-
-        &::after{
-          font-size: 1.2em;
-          color:$secondary-color;
-        }
-      }
     }
 
     .cta-border{
