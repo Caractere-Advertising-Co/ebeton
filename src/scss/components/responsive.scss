@@ -20,7 +20,7 @@
         }
 
         p{
-            font-size: .9rem!important;
+            font-size: 1rem!important;
             line-height: 2rem!important;
         }
 
@@ -37,7 +37,9 @@
 
                 .col-g{
                     width: 100%;
+
                     #menu-principal{
+
                         li{
                             font-size: 2.5rem;
                         }
@@ -49,7 +51,7 @@
                     position: relative;
                     bottom: 3vh;
 
-                    a+a{
+                    a + a{
                         margin-left: 10px;
                     }
                 }
@@ -115,7 +117,6 @@
                                 margin: auto;
                             }
                         }
-        
                     }
 
                     .menu_footer{
@@ -129,7 +130,6 @@
                         width: 100%;
                         padding: 0;
                     }
-
                 }
 
                 .footer-bottom{
@@ -145,7 +145,6 @@
                     }
                 }
             }
-
         }
 
         /********** END BASIC ************/
