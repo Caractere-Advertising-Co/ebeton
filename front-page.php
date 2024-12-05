@@ -1,10 +1,10 @@
 <?php 
-
+get_header();
 /* Template Name: Page accueil */
 
 $elements = get_field('menu_hero');
 
-get_header();?>
+?>
 
 <section id="hero-section">
     <div class="swiper">

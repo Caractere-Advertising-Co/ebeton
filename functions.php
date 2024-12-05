@@ -208,6 +208,5 @@ function content_popup(){
   exit;
 }
 
-
 add_action('wp_ajax_content_popup', 'content_popup');
 add_action('wp_ajax_nopriv_content_popup', 'content_popup');

@@ -3,11 +3,13 @@
     $logo = get_field('logo','options');
     $logo_white = get_field('logo-white','options');
     $style = get_field('header__dark_theme');
+
+    $excludePage= array(892,627,892);
 ?>
 
 <div class="header navigation">
     <div class="col-g">
-        <?php if(is_front_page()):?>
+        <?php if(is_front_page() || in_array(get_the_ID(),$excludePage)):?>
             <a href="<?php echo home_url();?>">
                 <?php if($logo_white):?>
                     <img src="<?php echo $logo_white['url'];?>" alt="<?php echo $logo_white['title'];?>" class="logo" />
