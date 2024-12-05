@@ -218,7 +218,7 @@
       color: $light;
     }
 
-    .swiper-avantages{
+    .grid-avantages{
       margin-top: 80px;
       width: 80vw;
       max-width: 1400px;
@@ -229,7 +229,7 @@
       grid-template-columns: repeat(4, 1fr);
         
 
-      .swiper-slide{
+      .card-adv{
         min-height: 250px;
         max-height: 250px;
         width: 100%;
@@ -251,7 +251,7 @@
           flex-direction: column;
                 
           .adv_title{
-            color:$secondary-color;
+            color: $secondary-color;
             transform: translateY(0);
             transition: all ease-in 350ms;
             opacity: 1;

@@ -98,12 +98,12 @@ get_header();
     <div class="container">
         <span class="from-bottom"><?php echo $titreAdv;?></span>
 
-        <div class="swiper-avantages from-bottom">
+        <div class="grid-avantages from-bottom">
             <?php if(have_rows('carte_avantages')) : 
                 while(have_rows('carte_avantages')) : the_row();
                     $icone = get_sub_field('icone');?>
 
-                    <div class="swiper-slide">
+                    <div class="card-adv">
                         <div class="content">
                             <div class="adv_title">
                                 <div class="block-img">
