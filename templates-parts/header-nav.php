@@ -7,7 +7,7 @@
 
 <div class="header navigation">
     <div class="col-g">
-        <?php if(is_front_page() || is_page_template( 'Page Référence' ) || is_page_template( 'About-us' )):?>
+        <?php if(is_front_page() || is_page(627) || is_page(844)):?>
             <a href="<?php echo home_url();?>">
                 <?php if($logo_white):?>
                     <img src="<?php echo $logo_white['url'];?>" alt="<?php echo $logo_white['title'];?>" class="logo" />
