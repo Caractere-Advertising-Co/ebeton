@@ -36,7 +36,7 @@
                     text-decoration: none;
                     font-family: 'Montserrat-v';
                     line-height: 1.5em;
-                    font-weight: 200;
+                    font-weight: 400;
                     transition: all ease-in 300ms;
 
                     &:hover{
@@ -54,17 +54,18 @@
             }
 
             .sub-menu{
-                transform: translateX(-200px);
-                height: 0;
                 transform-origin: left;
-                font-size: .5rem;
+                align-items: center;
+                font-size: .9rem;
                 transition: height ease-in 300ms;
                 transition: transform ease-in 500ms;
-            }
 
-            .active{
-                transform: translateX(50px);
-                height: 220px;
+                li{
+                    a{
+                        font-size: .85rem;
+                        line-height: 1.2rem;
+                    }
+                }
             }
         }   
     }
