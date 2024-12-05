@@ -110,10 +110,11 @@ get_header();
                                     <img src="<?php echo $icone['url'];?>" alt="<?php echo $icone['title'];?>"/>
                                 </div>
                                 <h4><?php echo get_sub_field('nom_avantages');?></h4>
+
+                                <?php echo get_sub_field('description_avantage');?>
                             </div>
 
                             <div class="adv_descr">
-                                <?php echo get_sub_field('description_avantage');?>
                             </div>
                         </div>
                     </div>

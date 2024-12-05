@@ -249,7 +249,6 @@
           flex-direction: column;
                 
           .title{
-            color: $secondary-color;
             transform: translateY(0);
             transition: all ease-in 350ms;
             opacity: 1;
@@ -257,8 +256,8 @@
 
             h4{
               font-weight: 400;
-              text-align: center;
-              color: $light;
+              text-align: left;
+              color: $secondary-color;
               font-size: 1.2rem;
             }
 
@@ -268,15 +267,9 @@
                   
               img{
                 object-fit: contain;
+                width: fit-content;
               }
             }
-          }
-    
-          .adv_descr{
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all ease-in 400ms;
-            font-size: 1rem;
 
             p{
               font-size: .85rem;
@@ -289,15 +282,6 @@
             background-color: $primary-color-hover;
             border-bottom: 3px solid $secondary-color;
 
-            .adv_title{
-              transform: translateY(-100px);
-              opacity: 0;
-            }
-
-            .adv_descr{
-              opacity: 1;
-              transform: translateY(0);
-            }
           } 
                 
           &::-webkit-scrollbar{
