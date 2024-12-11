@@ -4,7 +4,7 @@
     $logo_white = get_field('logo-white','options');
     $style = get_field('header__dark_theme');
 
-    $excludePage= array(892,627,892,936,1000,1001,999);
+    $excludePage= array(892,627,892);
 ?>
 
 <div class="header navigation">
