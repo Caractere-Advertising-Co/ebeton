@@ -17,12 +17,26 @@
                 color: $light;
               }
             }
+
+            &.menu-item-has-children{
+              &:hover{
+                .sub-menu{
+                  li{
+                    a{
+                      color: $primary-color;
+                    }
+
+                    border-bottom: 1px solid $primary-color;
+                  }
+                }
+              }
+            }
           }
         }
       }
     }
   }
-
+  
   #introduction-ref {
     padding-top: 300px;
   
