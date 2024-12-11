@@ -179,34 +179,9 @@
         display: flex;
         background-color: $light;
   
-        .col_details{
-          width: 25%;
-          height: 80vh;
-          background-color: $light;
-          padding:5vh 2vw;
-
-          h2{
-            font-weight: 600;
-            color: $secondary-color;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-          }
-  
-          p{
-            width: 90%;
-            font-size: 1rem;
-            text-align: justify;
-            margin-bottom: 0;
-
-            strong{
-              font-family: 'Montserrat',sans-serif;
-              font-weight: 800;
-            }
-          }
-        }
-  
+        
         .col-slider{
-          width: 75%;
+          width: 100%;
           height: 90vh;
   
           .full-size{
