@@ -135,78 +135,78 @@ add_action('wp_ajax_nopriv_load_more_ref', 'load_more_ref');
 
 /* Récup infos popup */
 
-function content_popup(){
-  $ajaxposts = new WP_Query([
-      'post_type' => 'chantiers',
-      'p' => intval($_POST['id']),
-  ]);
+// function content_popup(){
+//   $ajaxposts = new WP_Query([
+//       'post_type' => 'chantiers',
+//       'p' => intval($_POST['id']),
+//   ]);
 
-  if ($ajaxposts->have_posts()) {
-      while ($ajaxposts->have_posts()) : $ajaxposts->the_post();
-          $post_data = array(
-              'title' => get_the_title(),
-              'content' => get_the_content(),
-              'thumbnails' => get_the_post_thumbnail_url(),
-              'date' => get_field('date_du_chantier'),
-              'lieu' => get_field('lieu_du_chantier'),
-              'galerie' => get_field('galerie_du_chantier'),
-          );
+//   if ($ajaxposts->have_posts()) {
+//       while ($ajaxposts->have_posts()) : $ajaxposts->the_post();
+//           $post_data = array(
+//               'title' => get_the_title(),
+//               'content' => get_the_content(),
+//               'thumbnails' => get_the_post_thumbnail_url(),
+//               'date' => get_field('date_du_chantier'),
+//               'lieu' => get_field('lieu_du_chantier'),
+//               'galerie' => get_field('galerie_du_chantier'),
+//           );
 
-          ob_start();
-          ?>
+//           ob_start();
+//           ?>
           
-          <div class="popup-content">
-            <div class="col_details">
-              <h2><?php echo $post_data['title']; ?></h2>
-              <p><strong>Date du chantier : </strong><?php echo $post_data['date']; ?></p>
-              <p><strong>Lieu : </strong><?php echo $post_data['lieu']; ?></p>
-              <?php echo $post_data['content']; ?>
-            </div>
+//           <div class="popup-content">
+//             <div class="col_details">
+//               <h2><?php echo $post_data['title']; ?></h2>
+//               <p><strong>Date du chantier : </strong><?php echo $post_data['date']; ?></p>
+//               <p><strong>Lieu : </strong><?php echo $post_data['lieu']; ?></p>
+//               <?php echo $post_data['content']; ?>
+//             </div>
             
-            <div class="col-slider">
-            <div class="close">X</div>
+//             <div class="col-slider">
+//             <div class="close">X</div>
 
-              <?php if($post_data['galerie']) : ?>
-                <div class="swiper swiper-reference">
-                  <div class="swiper-wrapper">
-                    <?php foreach($post_data['galerie'] as $img) :?>
-                      <div class="swiper-slide" style="background:url('<?php echo $img['url'];?>');">
-                      </div>
-                    <?php endforeach;?>
-                  </div>
+//               <?php if($post_data['galerie']) : ?>
+//                 <div class="swiper swiper-reference">
+//                   <div class="swiper-wrapper">
+//                     <?php foreach($post_data['galerie'] as $img) :?>
+//                       <div class="swiper-slide" style="background:url('<?php echo $img['url'];?>');">
+//                       </div>
+//                     <?php endforeach;?>
+//                   </div>
 
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>  
-                </div>
+//                   <div class="swiper-button-next"></div>
+//                   <div class="swiper-button-prev"></div>  
+//                 </div>
 
-                <!-- <div thumbsSlider="" class="swiper swiper-thumbs">
-                  <div class="swiper-wrapper">
-                    <?php foreach($post_data['galerie'] as $img) : ?>
-                      <div class="swiper-slide" style="background:url('<?php echo $img['url'];?>');background-size:cover;">
-                      </div>
-                    <?php endforeach;?>
-                  </div>
-                </div> -->
+//                 <!-- <div thumbsSlider="" class="swiper swiper-thumbs">
+//                   <div class="swiper-wrapper">
+//                     <?php foreach($post_data['galerie'] as $img) : ?>
+//                       <div class="swiper-slide" style="background:url('<?php echo $img['url'];?>');background-size:cover;">
+//                       </div>
+//                     <?php endforeach;?>
+//                   </div>
+//                 </div> -->
                   
-              <?php else :?>
-                <div class="full-size" style="background:url('<?php echo $post_data['thumbnails'];?>');">
-                </div>
-              <?php endif;?>
-            </div>
-          </div>
+//               <?php else :?>
+//                 <div class="full-size" style="background:url('<?php echo $post_data['thumbnails'];?>');">
+//                 </div>
+//               <?php endif;?>
+//             </div>
+//           </div>
 
-          <?php
-          $response['template_content'] = ob_get_clean(); // Récupère le contenu du template après l'inclusion
-      endwhile;
-  } else {
-      $response['template_content'] = ''; // Aucun post trouvé, réponse vide
-  }
+//           <?php
+//           $response['template_content'] = ob_get_clean(); // Récupère le contenu du template après l'inclusion
+//       endwhile;
+//   } else {
+//       $response['template_content'] = ''; // Aucun post trouvé, réponse vide
+//   }
 
-  wp_reset_postdata(); // Réinitialise les données du post
+//   wp_reset_postdata(); // Réinitialise les données du post
 
-  echo json_encode($response);
-  exit;
-}
+//   echo json_encode($response);
+//   exit;
+// }
 
-add_action('wp_ajax_content_popup', 'content_popup');
-add_action('wp_ajax_nopriv_content_popup', 'content_popup');
+// add_action('wp_ajax_content_popup', 'content_popup');
+// add_action('wp_ajax_nopriv_content_popup', 'content_popup');
