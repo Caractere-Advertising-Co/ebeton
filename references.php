@@ -42,7 +42,7 @@ $bouton      = get_field('bouton');
             <?php 
                 $chantiers = new WP_Query(array(
                     'post_type' => 'chantiers',
-                    'posts_per_page' => 9,
+                    'posts_per_page' => 6,
                     'orderby' => 'date',
                     'paged' => 1,
                 ));
